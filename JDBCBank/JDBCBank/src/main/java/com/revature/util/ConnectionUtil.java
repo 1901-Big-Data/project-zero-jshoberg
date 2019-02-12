@@ -25,7 +25,7 @@ public class ConnectionUtil {
 		
 		try {
 			Properties props = new Properties();
-			in = new FileInputStream("C:\\Users\\Storm\\Documents\\Revature\\Core\\java-core-jshoberg\\JDBCBank\\JDBCBank\\src\\main\\resources\\connection.properties");
+			in = new FileInputStream("C:\\Users\\Storm\\Documents\\Revature\\bank\\project-zero-jshoberg\\JDBCBank\\JDBCBank\\src\\main\\resources\\connection.properties");
 			props.load(in);
 			
 			Class.forName("oracle.jdbc.driver.OracleDriver");
