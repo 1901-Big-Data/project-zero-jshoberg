@@ -65,4 +65,8 @@ public class User implements Serializable{
 	public Double getFunds() {
 		return funds;
 	}
+	
+	public String getPass() {
+		return password;
+	}
 }

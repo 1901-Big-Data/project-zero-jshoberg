@@ -13,5 +13,7 @@ public interface UserDao {
 	Optional<Boolean> delete(User user);
 	
 	Optional<User> update(User user);
+	
+	Optional<User> alter(User user, String username, String password, Permissions permissions, Double money);
 
 }

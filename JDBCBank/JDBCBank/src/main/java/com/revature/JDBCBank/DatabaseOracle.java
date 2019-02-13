@@ -177,4 +177,31 @@ public class DatabaseOracle implements DatabaseAccessor {
 		}
 		
 	}
+
+	@Override
+	public Optional<List<ArrayList<String>>> retrieveAllUsers() {
+		// TODO Auto-generated method stub
+		Connection con = ConnectionUtil.getConnection();
+		if (con == null) {
+			return Optional.empty();
+		}
+		
+		List<ArrayList<String>> output = new ArrayList<ArrayList<String>>();
+		
+		try {
+			String sql = "select * from users";
+			PreparedStatement psql = con.prepareStatement(sql);
+			ResultSet rs = psql.executeQuery();
+			while (rs.next()) {
+				ArrayList<String> data = new ArrayList<String>();
+				data.add(rs.getString("username"));
+				data.add(String.valueOf((rs.getInt("user_id"))));
+				output.add(data);
+			}
+			return Optional.of(output);
+		} catch (SQLException e) {
+			System.out.println("SQL Exception");
+		}
+		return Optional.empty();
+	}
 }

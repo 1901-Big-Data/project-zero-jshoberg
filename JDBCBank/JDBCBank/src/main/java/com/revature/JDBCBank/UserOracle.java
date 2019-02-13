@@ -127,7 +127,7 @@ public class UserOracle implements UserDao {
 		}
 		
 		try {
-			String sql = "delete * from users where user_id = ?";
+			String sql = "delete from users where user_id = ?";
 			PreparedStatement psql = con.prepareStatement(sql);
 			psql.setInt(1, user.getUserID());
 			
@@ -173,6 +173,13 @@ public class UserOracle implements UserDao {
 			System.out.println("SQL Error");
 		}
 		return Optional.empty();
+	}
+
+	@Override
+	public Optional<User> alter(User user, String username, String password, Permissions permissions,
+			Double money) {
+		// TODO Auto-generated method stub
+		return null;
 	}
 
 }
