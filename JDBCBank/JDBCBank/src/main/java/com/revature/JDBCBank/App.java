@@ -79,7 +79,9 @@ public class App
 	    			runLogin = false;
 	    			runManager = true;
 	    			break;
-	    			
+	    		case "help":
+	    			System.out.println("Available commands:\nlogin\nregister\ncontinue\nhelp\nquit");
+	    			break;
 	    		case "quit":
 	    		case "exit":
 	    			System.out.println("Exiting...");
@@ -291,6 +293,8 @@ public class App
 			        					sql.delete(user);
 			        					System.out.println(user.getUsername() + " deleted");
 			        					runManager = false;
+			        					runLogin = true;
+			        					conf = false;
 			        					break;
 			        				case "no":
 			        				case "n":
